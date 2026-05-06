@@ -1,29 +1,24 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Produit } from '../interface/produit';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProduitService {
-  private apiUrl = 'http://localhost:3001/api/produits';
+export class AuthService {
+  private apiUrl = 'http://localhost:3001/api/auth';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
-  getProduits(): Observable<Produit[]> {
-    return this.http.get<Produit[]>(this.apiUrl);
+  login(credentials: {username: string, password: string}): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/login`, credentials);
   }
 
-  getProduitById(id: number): Observable<Produit> {
-    return this.http.get<Produit>(`${this.apiUrl}/${id}`);
-  }
-
-  ajouterProduit(produit: Produit): Observable<Produit> {
-    return this.http.post<Produit>(this.apiUrl, produit);
-  }
-
-  supprimerProduit(id: number): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${id}`);
+  logout(): void {
+    localStorage.removeItem('token');
+    localStorage.removeItem('role');
+    localStorage.removeItem('username');
+    this.router.navigate(['/login']);
   }
 }
