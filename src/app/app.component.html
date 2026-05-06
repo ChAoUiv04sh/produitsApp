@@ -1,0 +1,13 @@
+<div class="accueil">
+  <h1>Bienvenue, {{ username }}</h1>
+  <p>Vous êtes connecté en tant que : <strong>{{ role }}</strong></p>
+  <nav>
+    <a routerLink="/produits">Voir les produits</a>
+    @if(isAdmin){
+      <a routerLink="/ajouter">Ajouter un produit</a>
+    }
+    <button (click)="logout()">Déconnexion</button>
+  </nav>
+</div>
+
+<router-outlet></router-outlet>

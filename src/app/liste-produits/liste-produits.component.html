@@ -1,0 +1,32 @@
+<div class="liste">
+  <h2>Liste des Produits</h2>
+  @if(isAdmin){
+    <a routerLink="/ajouter">Ajouter</a>
+  }
+  <table>
+    <thead>
+      <tr><th>Nom</th><th>Catégorie</th><th>Prix</th>
+        <th>Stock</th><th>Actions (voir détails + supprimer)</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(produit of produits; track produit.id){
+        <tr>
+          <td>{{ produit.nom }}</td>
+          <td>{{ produit.categorie }}</td>
+          <td>{{ produit.prix }}€</td>
+          <td>{{ produit.stock }}</td>
+          <td>
+            <a [routerLink]="['/produits', produit.id]">Voir détails</a>
+            @if(isAdmin){
+              <button (click)="supprimerProduit(produit.id)">Supprimer</button>
+            }
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+  @if(erreur){
+    <p class="erreur">{{ erreur }}</p>
+  }
+</div>

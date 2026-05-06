@@ -1,0 +1,23 @@
+<div class="form-container">
+  <h2>Ajouter un Produit</h2>
+  <form (ngSubmit)="ajouter()">
+    <input [(ngModel)]="produit.nom" name="nom" 
+           placeholder="Nom" required />
+    <input [(ngModel)]="produit.categorie" name="categorie" 
+           placeholder="Catégorie" required />
+    <input [(ngModel)]="produit.prix" name="prix" 
+           type="number" placeholder="Prix" required />
+    <input [(ngModel)]="produit.stock" name="stock" 
+           type="number" placeholder="Stock" required />
+    <textarea [(ngModel)]="produit.description" name="description" 
+              placeholder="Description"></textarea>
+    <button type="submit">Enregistrer</button>
+    <a routerLink="/produits">Annuler</a>
+  </form>
+  @if(erreur){
+    <p class="erreur">{{ erreur }}</p>
+  }
+  @if(succes){
+    <p class="succes">Produit ajouté avec succès !</p>
+  }
+</div>

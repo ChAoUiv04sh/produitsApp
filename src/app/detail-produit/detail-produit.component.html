@@ -1,0 +1,14 @@
+@if(produit) {
+  <div class="detail">
+    <h2>Détail du produit</h2>
+    <p><strong>Nom:</strong> {{ produit.nom }}</p>
+    <p><strong>Catégorie:</strong> {{ produit.categorie }}</p>
+    <p><strong>Prix:</strong> {{ produit.prix }}€</p>
+    <p><strong>Stock:</strong> {{ produit.stock }}</p>
+    <p><strong>Description:</strong> {{ produit.description }}</p>
+    <a routerLink="/produits">Retour à la liste</a>
+  </div>
+}
+@if(erreur) {
+  <p class="erreur">{{ erreur }}</p>
+}
