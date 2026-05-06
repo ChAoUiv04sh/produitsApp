@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "nom": "Ordinateur portable",
+    "categorie": "Informatique",
+    "prix": 899.99,
+    "stock": 15,
+    "description": "HP ProBook 14 pouces"
+  },
+  {
+    "id": 2,
+    "nom": "Souris sans fil",
+    "categorie": "Périphérique",
+    "prix": 29.99,
+    "stock": 42,
+    "description": "Logitech MX Master 3"
+  },
+  {
+    "id": 3,
+    "nom": "Clavier mécanique",
+    "categorie": "Périphérique",
+    "prix": 89.99,
+    "stock": 8,
+    "description": "Keychron K2 AZERTY"
+  },
+  {
+    "id": 4,
+    "nom": "Écran 27 pouces",
+    "categorie": "Affichage",
+    "prix": 349.00,
+    "stock": 5,
+    "description": "Dell UltraSharp IPS"
+  },
+  {
+    "id": 5,
+    "nom": "Webcam HD",
+    "categorie": "Accessoire",
+    "prix": 69.99,
+    "stock": 20,
+    "description": "Logitech C920 1080p"
+  }
+]
